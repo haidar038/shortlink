@@ -52,7 +52,7 @@ h6 {
     color: royalblue;
 }
 
-.g-recaptcha {
-    transform: scale(1);
-    transform-origin: 0 0;
+.features svg {
+    fill: #555 !important;
+    height: 50px;
 }
