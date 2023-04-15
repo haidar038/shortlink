@@ -1,4 +1,5 @@
 #ShortLink
+![alt text](https://github.com/haidar038/shortlink/src/img/ShortLink.webp "ShortLink")
 ShortLink adalah sebuah aplikasi URL Shortener yang dibangun menggunakan Flask dan SQLite, dengan antarmuka pengguna yang dibangun menggunakan Bootstrap. Aplikasi ini dapat memendekkan URL panjang dan melacak jumlah klik atau pengunjung pada setiap tautan yang telah dibuat.
 
 ## Teknologi yang Digunakan
@@ -16,11 +17,12 @@ Feature : ChatGPT
 Security : ChatGPT
 Color Pallete : ChatGPT
 Script : 85% ChatGPT
+UI : Exactly ChatGPT.... Oh no, it's Me!😂
 
 ## Fitur
 - Memendekkan URL panjang menjadi URL pendek
 - Melacak jumlah klik atau pengunjung untuk setiap tautan yang telah dibuat
-- Tampilan antarmuka pengguna yang responsif dan mudah digunakan
+- Tampilan antarmuka pengguna yang responsif dan mudah digunakan untuk semua device
 
 ## Demo
 Anda dapat mengunjungi [ShortLink](https://shortlink.up.railway.app) untuk demonya.
