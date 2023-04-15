@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block container %}
 
 <div class="container mt-5 mb-5">
-    <div class="row">
+    <div class="row mb-5 flex-wrap">
         <div class="col-md-6 mx-auto">
             <h1 class="text-center">Shorten Your URL!</h1>
             <p class="text-center mb-4">Shorten your links, lengthen your reach with ShortLink</p>
@@ -20,6 +20,76 @@
                 <div class="alert alert-danger" role="alert">{{ error }}</div>
                 {% endif %}
             </form>
+        </div>
+    </div>
+    <div class="row features text-center">
+        <div class="col">
+            <?xml version="1.0" ?>
+            <svg version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title />
+                <desc />
+                <defs />
+                <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+                    <g fill="#555" id="Core" transform="translate(-128.000000, -86.000000)">
+                        <g id="check-circle-outline" transform="translate(128.000000, 86.000000)">
+                            <path
+                                d="M5.9,8.1 L4.5,9.5 L9,14 L19,4 L17.6,2.6 L9,11.2 L5.9,8.1 L5.9,8.1 Z M18,10 C18,14.4 14.4,18 10,18 C5.6,18 2,14.4 2,10 C2,5.6 5.6,2 10,2 C10.8,2 11.5,2.1 12.2,2.3 L13.8,0.7 C12.6,0.3 11.3,0 10,0 C4.5,0 0,4.5 0,10 C0,15.5 4.5,20 10,20 C15.5,20 20,15.5 20,10 L18,10 L18,10 Z"
+                                id="Shape"
+                            />
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p>Easy to use</p>
+        </div>
+        <div class="col">
+            <?xml version="1.0" ?><svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M598.6 41.41C570.1 13.8 534.8 0 498.6 0s-72.36 13.8-99.96 41.41l-43.36 43.36c15.11 8.012 29.47 17.58 41.91 30.02c3.146 3.146 5.898 6.518 8.742 9.838l37.96-37.96C458.5 72.05 477.1 64 498.6 64c20.67 0 40.1 8.047 54.71 22.66c14.61 14.61 22.66 34.04 22.66 54.71s-8.049 40.1-22.66 54.71l-133.3 133.3C405.5 343.1 386 352 365.4 352s-40.1-8.048-54.71-22.66C296 314.7 287.1 295.3 287.1 274.6s8.047-40.1 22.66-54.71L314.2 216.4C312.1 212.5 309.9 208.5 306.7 205.3C298.1 196.7 286.8 192 274.6 192c-11.93 0-23.1 4.664-31.61 12.97c-30.71 53.96-23.63 123.6 22.39 169.6C293 402.2 329.2 416 365.4 416c36.18 0 72.36-13.8 99.96-41.41L598.6 241.3c28.45-28.45 42.24-66.01 41.37-103.3C639.1 102.1 625.4 68.16 598.6 41.41zM234 387.4L196.1 425.3C181.5 439.1 162 448 141.4 448c-20.67 0-40.1-8.047-54.71-22.66c-14.61-14.61-22.66-34.04-22.66-54.71s8.049-40.1 22.66-54.71l133.3-133.3C234.5 168 253.1 160 274.6 160s40.1 8.048 54.71 22.66c14.62 14.61 22.66 34.04 22.66 54.71s-8.047 40.1-22.66 54.71L325.8 295.6c2.094 3.939 4.219 7.895 7.465 11.15C341.9 315.3 353.3 320 365.4 320c11.93 0 23.1-4.664 31.61-12.97c30.71-53.96 23.63-123.6-22.39-169.6C346.1 109.8 310.8 96 274.6 96C238.4 96 202.3 109.8 174.7 137.4L41.41 270.7c-27.6 27.6-41.41 63.78-41.41 99.96c-.0001 36.18 13.8 72.36 41.41 99.97C69.01 498.2 105.2 512 141.4 512c36.18 0 72.36-13.8 99.96-41.41l43.36-43.36c-15.11-8.012-29.47-17.58-41.91-30.02C239.6 394.1 236.9 390.7 234 387.4z"
+                />
+            </svg>
+            <p>The URL shortened as well</p>
+        </div>
+        <div class="col">
+            <?xml version="1.0" ?><svg id="Icons" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <defs></defs>
+                <path
+                    class="cls-1"
+                    d="M22.814,9.216l-.826-5.368A1,1,0,0,0,21,3C15.533,3,12.731.316,12.707.293a1,1,0,0,0-1.41,0C11.269.316,8.467,3,3,3a1,1,0,0,0-.988.848L1.186,9.216A12.033,12.033,0,0,0,7.3,21.576l4.22,2.3a1,1,0,0,0,.958,0l4.22-2.3A12.033,12.033,0,0,0,22.814,9.216Zm-7.072,10.6L12,21.861,8.258,19.82a10.029,10.029,0,0,1-5.1-10.3l.7-4.541A14.717,14.717,0,0,0,12,2.3,14.717,14.717,0,0,0,20.139,4.98l.7,4.54A10.029,10.029,0,0,1,15.742,19.82Z"
+                />
+                <path class="cls-1" d="M15.293,8.293,10,13.586,8.707,12.293a1,1,0,1,0-1.414,1.414l2,2a1,1,0,0,0,1.414,0l6-6a1,1,0,0,0-1.414-1.414Z" />
+            </svg>
+            <p>This is secure</p>
+        </div>
+        <div class="col">
+            <?xml version="1.0" ?>
+            <svg style="enable-background: new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <style type="text/css">
+                    .st0 {
+                        fill: none;
+                        stroke: #555;
+                        stroke-width: 2;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                    }
+                    .st1 {
+                        fill: #555;
+                    }
+                </style>
+                <g id="Layer_2" />
+                <g id="Layer_1">
+                    <g>
+                        <polyline class="st0" points="11,8.5 4,8.5 4,26.5 28,26.5 28,8.5 21,8.5   " />
+                        <path class="st0" d="M1,27.5v-1h30v1c0,1.10457-0.89543,2-2,2H3C1.89543,29.5,1,28.60457,1,27.5z" />
+                        <rect class="st0" height="19" width="10" x="11" y="2.5" />
+                        <line class="st0" x1="15" x2="17" y1="5.5" y2="5.5" />
+                        <circle class="st1" cx="16" cy="18.5" r="1" />
+                        <line class="st0" x1="21" x2="11" y1="15.5" y2="15.5" />
+                    </g>
+                </g>
+            </svg>
+            <p>Responsive to all devices</p>
         </div>
     </div>
 </div>
