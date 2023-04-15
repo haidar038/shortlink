@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block container %}
+<div class="container mb-5">
+    <h1 class="text-center mb-4 mt-4">Contact</h1>
+    <hr />
+
+    <p>If you have any questions or concerns about our URL shortener project, please don't hesitate to contact us. You can reach us by social media below. We will do our best to respond to your inquiry in a timely manner.</p>
+    <div class="row d-flex justify-content-center mt-4 mb-4">
+        <div class="col-sm-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form action="{{ url_for('contact')}}" method="post">
+                        {{ form.hidden_tag() }}{{ form.csrf_token }}
+                        <div class="mb-3">{{ form.name.label() }} {{ form.name(class="form-control") }}</div>
+                        <div class="mb-3">{{ form.email.label() }} {{ form.email(class="form-control") }}</div>
+                        <div class="mb-3">{{ form.message.label() }} {{ form.message(class="form-control") }}</div>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Send <span class="bi bi-send-fill"></span></button>
+                            <button type="reset" class="btn btn-outline-secondary">Clear <span class="bi bi-eraser-fill"></span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center mb-3">You can also contact me:</div>
+            <div class="contact d-flex gap-4 justify-content-center">
+                <div id="fb" class="d-flex flex-column text-center">
+                    <a class="link-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="M Khaidar" target="_blank" href="https://facebook.com/haidar038"
+                        ><span class="bi bi-facebook fs-2"></span
+                    ></a>
+                    <div class="badge text-bg-primary">on Facebook</div>
+                </div>
+                <div id="ggl" class="d-flex flex-column text-center">
+                    <a
+                        class="link-danger"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="haidar038@gmail.com"
+                        target="_blank"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=haidar038@gmail.com"
+                        ><span class="bi bi-google fs-2"></span
+                    ></a>
+                    <div class="badge text-bg-danger">Send an Email</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script async src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+{% endblock %}

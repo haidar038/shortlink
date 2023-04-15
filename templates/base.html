@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="
+            Shorten your long URLs with our easy-to-use URL Shortener web app. Our app allows you to create short and easy-to-remember URLs that are perfect for sharing on social media, email, and more. Try our URL Shortener today and simplify your links!
+
+            Example URLs:
+            
+            Original URL: https://www.example.com/some/long/url/that/is/hard/to/remember
+            
+            Shortened URL: https://www.urlshortener.com/abc123
+            
+            Original URL: https://www.anotherexample.com/another/long/url/that/needs/shortening
+            
+            Shortened URL: https://www.urlshortener.com/xyz789
+            
+            Thank you for using our URL Shortener web app!"
+        />
+        <title>
+            {% if page == 'home' %} ShortLink {% elif page == 'about' %} About {% elif page == 'contact' %} Contact {% elif page == 'shorten' %} Your Shortened URL {% elif page == 'policy' %} Privacy Policy {% elif page == 'tou' %} Terms of
+            Use {% else %} {% endif %}
+        </title>
+
+        <!-- Favico -->
+        <link media="all" rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png' ) }}" />
+        <link media="all" rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png' ) }}" />
+        <link media="all" rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png' ) }}" />
+        <link media="all" rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest' ) }}" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            media="print"
+            onload="this.media='all'"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap Icons CSS -->
+        <link media="print" onload="this.media='all'" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+        <!-- Google Fonts -->
+        <link media="all" rel="preconnect" href="https://fonts.googleapis.com" />
+        <link media="all" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link media="all" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&display=swap" rel="stylesheet" />
+
+        <!-- TODO Toastr -->
+        {{ toastr.include_toastr_css() }} {{ toastr.message() }}
+
+        <style type="text/css">
+            *,
+            *:before,
+            *:after {
+                font-display: swap;
+                box-sizing: inherit;
+            }
+
+            html {
+                height: 100%;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "IBM Plex Sans";
+                background-color: #fdfdfd;
+                color: #3a3a3a;
+                min-height: 100%;
+                position: relative;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-weight: 700;
+            }
+
+            .input-group .btn {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            .toast {
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                width: 200px;
+                z-index: 1;
+            }
+
+            .text-bg-blue {
+                background-color: royalblue !important;
+                color: white !important;
+            }
+
+            .card.text-bg-blue {
+                border-color: royalblue !important;
+            }
+
+            .text-blue {
+                color: royalblue;
+            }
+
+            .g-recaptcha {
+                transform: scale(1);
+                transform-origin: 0 0;
+            }
+        </style>
+
+        <link rel="preload" href="{{ url_for('static', filename='css/style.css' ) }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}" /></noscript>
+
+        <script async src="{{ url_for('static', filename='js/CopyToClipboard.js') }}"></script>
+    </head>
+    <body class="vh-100 d-flex flex-column justify-content-between">
+        <section>
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-dark text-bg-blue">
+                    <div class="container">
+                        <a class="navbar-brand d-flex align-items-center fw-bolder" href="{{ url_for('index' ) }}"
+                            ><img src="{{ url_for('static', filename='img/ShortLink Light.webp') }}" alt="ShortLink" height="24" width="24" class="rounded align-middle me-1" /> ShortLink</a
+                        >
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link link-light" href="{{ url_for('index' ) }}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link link-light" href="{{ url_for('about' ) }}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link link-light" href="{{ url_for('contact' ) }}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>{% block container %} {% endblock %}</main>
+        </section>
+
+        <section>
+            <footer class="footer text-bg-dark py-2">
+                <div class="container text-center mb-0">
+                    <p class="small opacity-50">&copy; 2023 ShortLink. All rights reserved.</p>
+                    <hr class="m-0" />
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a class="link-light link-opacity-75-hover link-offset-1" href="{{ url_for('privacy' ) }}">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="link-light link-opacity-75-hover link-offset-1" href="{{ url_for('tou' ) }}">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </section>
+
+        <!-- Bootstrap Bundle JS (including Popper.js) -->
+        {{ toastr.include_toastr_js() }}
+        <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+        <script async src="{{ url_for('static', filename='js/tooltips.js') }}"></script>
+        <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </body>
+</html>

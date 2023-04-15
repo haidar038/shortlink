@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block container %}
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1 class="text-center">Shorten Your URL!</h1>
+            <p class="text-center mb-4">Shorten your links, lengthen your reach with ShortLink</p>
+            <form method="POST" action="{{ url_for('shorten') }}">
+                {{ form.hidden_tag() }}{{ form.csrf_token }}
+
+                <!-- <label for="long-url" class="form-label">Long URL</label>
+                    <input type="url" class="form-control" id="long-url" name="long-url" required /> -->
+                <div class="card mb-3 shadow-sm text-bg-blue">
+                    <div class="card-body">{{ form.url.label(class="mb-3") }} {{ form.url(class="form-control") }}</div>
+                    <div class="text-center mb-3">
+                        <button type="submit" class="btn btn-light"><i class="bi bi-link-45deg me-2"></i>Shorten</button>
+                    </div>
+                </div>
+                {% if error %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

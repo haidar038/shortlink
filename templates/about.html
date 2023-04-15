@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block container %}
+<div class="container mb-5">
+    <h1 class="text-center mb-4 mt-4">About</h1>
+    <hr />
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-sm-12 d-flex justify-content-between flex-wrap about">
+                <img src="{{ url_for('static', filename='img/Bootstrap_logo.webp' ) }}" alt="" height="60px" />
+                <img src="{{ url_for('static', filename='img/Flask_logo.webp' ) }}" alt="" height="60px" />
+                <img src="{{ url_for('static', filename='img/Python-logo-notext.webp' ) }}" alt="" height="60px" />
+                <img src="{{ url_for('static', filename='img/SQLite.webp' ) }}" alt="" height="60px" />
+            </div>
+        </div>
+    </div>
+
+    <p>
+        My Name is
+        <a
+            class="link-primary link-underline-opacity-0"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Visit my GitHub"
+            target="_blank"
+            href="https://github.com/haidar038"
+            >M. Khaidar</a
+        >, I am dedicated to providing you with the best solutions for shortening and managing your URLs. As a solo developer, I have
+        utilized cutting-edge technology such as Python, Flask, SQLite, and Bootstrap to create a fast and reliable service that is both
+        easy to use and visually appealing.
+    </p>
+    <p>
+        I pride myself on my commitment to customer satisfaction and strive to create a seamless user experience using the latest web
+        development frameworks. My mission is to help businesses and individuals save time and increase productivity by simplifying the
+        process of managing and sharing URLs.
+    </p>
+    <p>
+        Whether you need to shorten URLs for social media or track clicks for marketing campaigns, my platform provides a simple and
+        effective solution that is tailored to your needs. I understand the importance of reliable and secure URL management, and that's why
+        I have taken all necessary measures to ensure the safety of your data.
+    </p>
+    <p>Thank you for choosing my service, and I look forward to serving you!</p>
+</div>
+{% endblock %}

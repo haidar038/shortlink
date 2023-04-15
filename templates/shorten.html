@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block container %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1 class="text-center mb-4">URL Shortened!</h1>
+            <div class="card mb-4 shadow-sm text-bg-blue">
+                <div class="card-body">
+                    <p class="mb-3">Here is you shortened URL:</p>
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" id="shortened-url" value="{{ short_url }}" readonly />
+                        <button class="btn btn-light" type="button" onclick="copyToClipboard()">
+                            <i class="bi bi-clipboard"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-light" role="button" href="{{ url_for('index' ) }}"
+                            ><span class="bi bi-link-45deg me-2"></span> Shorten another link</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <p class="mb-0">
+                Original URL :
+                <a href="" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover"
+                    >{{ original_url }}</a
+                >
+            </p>
+            <p>Total clicked : <span class="badge text-bg-blue">{{ clicked }}</span></p>
+
+            <div class="mt-4 mb-4 small">
+                <div class="alert alert-info" role="alert">
+                    <p>Note :</p>
+                    <p>
+                        To view how many clicks on a Shortened URL at another time, make sure you have bookmarked this page or copied the
+                        link to this page. Because you do not have a dashboard to monitor user statistics who have visited your Shortened
+                        URL. <br /><br />
+                        You can also regenerate the link to create a new Shortened URL.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Toast -->
+            <div class="toast align-items-center text-bg-blue" id="copy-toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-body">URL has been copied to clipboard!</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

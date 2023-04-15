@@ -1,0 +1,58 @@
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    font-family: "IBM Plex Sans";
+    font-display: swap;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fdfdfd;
+    color: #3a3a3a;
+    min-height: 100%;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+.input-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.toast {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 200px;
+    z-index: 1;
+}
+
+.text-bg-blue {
+    background-color: royalblue !important;
+    color: white !important;
+}
+
+.card.text-bg-blue {
+    border-color: royalblue !important;
+}
+
+.text-blue {
+    color: royalblue;
+}
+
+.g-recaptcha {
+    transform: scale(1);
+    transform-origin: 0 0;
+}
