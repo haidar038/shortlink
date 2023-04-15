@@ -13,13 +13,13 @@ ShortLink adalah sebuah aplikasi URL Shortener yang dibangun menggunakan Flask d
 - ChatGPT
 
 ## Tentang Pembuatan Project
-Idea : ChatGPT
-Layout : ChatGPT
-Feature : ChatGPT
-Security : ChatGPT
-Color Pallete : ChatGPT
-Script : 85% ChatGPT
-UI : Exactly ChatGPT.... Oh no, it's Me!😂
+- Idea : ChatGPT
+- Layout : ChatGPT
+- Feature : ChatGPT
+- Security : ChatGPT
+- Color Pallete : ChatGPT
+- Script : 85% ChatGPT
+- UI : Exactly ChatGPT.... Oh no, it's Me!😂
 
 ## Fitur
 - Memendekkan URL panjang menjadi URL pendek
