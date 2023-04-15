@@ -12,6 +12,9 @@ ShortLink adalah sebuah aplikasi URL Shortener yang dibangun menggunakan Flask d
 - SQLite
 - ChatGPT
 
+## Deployment
+Project ini dideploy ke [Railway](https://railway.app/)
+
 ## Tentang Pembuatan Project
 - **Idea** : ChatGPT
 - **Layout** : ChatGPT
