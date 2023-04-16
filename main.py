@@ -7,7 +7,6 @@ from flask_limiter import Limiter
 from urllib.parse import urlparse
 from flask_mail import Mail, Message
 from flask_toastr import Toastr
-from flask_recaptcha import ReCaptcha
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField
 from wtforms.validators import DataRequired, url, Email
