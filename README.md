@@ -15,15 +15,6 @@ ShortLink adalah sebuah aplikasi URL Shortener yang dibangun menggunakan Flask d
 ## Deployment
 Project ini dideploy ke [Railway](https://railway.app/)
 
-## Tentang Pembuatan Project
-- **Idea** : ChatGPT
-- **Layout** : ChatGPT
-- **Feature** : ChatGPT
-- **Security** : ChatGPT
-- **Color Pallete** : ChatGPT
-- **Script** : 85% ChatGPT
-- **UI** : Exactly ChatGPT.... Oh no, it's Me!😂
-
 ## Fitur
 - Memendekkan URL panjang menjadi URL pendek
 - Melacak jumlah klik atau pengunjung untuk setiap tautan yang telah dibuat
