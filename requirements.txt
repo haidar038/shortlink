@@ -3,7 +3,6 @@ Flask==2.2.3
 Flask-Limiter==3.3.0
 Flask-Mail==0.9.1
 Flask-Migrate==4.0.4
-Flask-ReCaptcha==0.4.2
 Flask-SQLAlchemy==3.0.3
 Flask-Toastr==0.5.8
 Flask-WTF==1.1.1
