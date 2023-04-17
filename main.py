@@ -17,11 +17,11 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["RATELIMIT_DEFAULT"] = "100 per day"
 app.config["SECRET_KEY"] = secrets.token_hex(16)
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'logging_name': 'sqlalchemy'}
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
+app.config['MAIL_SERVER'] = 'smtp-relay.sendinblue.com'
+app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'haidar038@gmail.com'
-app.config['MAIL_PASSWORD'] = 'qniqzmvekrkczsly'
+app.config['MAIL_USERNAME'] = 'etercode30@gmail.com'
+app.config['MAIL_PASSWORD'] = 'p8fdMwC39bac2POy'
 
 toastr = Toastr(app)
 db = SQLAlchemy()
@@ -139,7 +139,7 @@ def contact():
         message = form.message.data
 
         # Send email to support email address
-        msg = Message('Contact Form Submission', sender=email, recipients=['haidar038@gmail.com'])
+        msg = Message('Contact Form Submission', sender=email, recipients=['etercode30@gmail.com'])
         msg.body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
         mail.send(msg)
 
