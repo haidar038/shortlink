@@ -21,8 +21,7 @@
             Thank you for using our URL Shortener web app!"
         />
         <title>
-            {% if page == 'home' %} ShortLink {% elif page == 'about' %} About {% elif page == 'contact' %} Contact {% elif page == 'shorten' %} Your Shortened URL {% elif page == 'policy' %} Privacy Policy {% elif page == 'tou' %} Terms of
-            Use {% else %} {% endif %}
+            {% block title %} {% endblock %}
         </title>
 
         <!-- Favico -->
