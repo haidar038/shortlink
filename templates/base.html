@@ -150,8 +150,6 @@
             onload="this.onload=null;this.rel='stylesheet'"
         />
         <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}" /></noscript>
-
-        <script async src="{{ url_for('static', filename='js/CopyToClipboard.js') }}"></script>
     </head>
     <body class="vh-100 d-flex flex-column justify-content-between">
         <section>
@@ -236,5 +234,6 @@
         ></script>
         <script async src="{{ url_for('static', filename='js/tooltips.js') }}"></script>
         <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script async src="{{ url_for('static', filename='js/CopyToClipboard.js') }}"></script>
     </body>
 </html>
