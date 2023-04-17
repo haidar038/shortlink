@@ -56,3 +56,12 @@ h6 {
     fill: #555 !important;
     height: 50px;
 }
+
+.socials img {
+    transition: ease-in-out 0.2s;
+    filter: grayscale(1);
+}
+
+.socials img:hover {
+    filter: grayscale(0);
+}
