@@ -67,10 +67,11 @@
         <!-- TODO Toastr -->
         {{ toastr.include_toastr_css() }} {{ toastr.message() }}
 
-        {% assets "css", "js" %}
-        <link rel="stylesheet" href="{{ css }}" />
-        <script async src="{{ js }}"></script>
+        {% assets "scss" %}
+        <link rel="stylesheet" href="{{ sass }}" />
         {% endassets %}
+        
+        <script async src="{{ url_for('static', filename='js/main.js') }}"></script>
     </head>
     <body class="vh-100 d-flex flex-column justify-content-between">
         <section>
