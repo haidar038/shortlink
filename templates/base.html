@@ -68,8 +68,8 @@
         {{ toastr.include_toastr_css() }} {{ toastr.message() }}
 
         {% assets "css", "js" %}
-        <link rel="stylesheet" href="{{ ASSET_URL }}" />
-        <script async src="{{ ASSET_URL }}"></script>
+        <link rel="stylesheet" href="{{ static/style.css }}" />
+        <script async src="{{ static/js/main.js }}"></script>
         {% endassets %}
     </head>
     <body class="vh-100 d-flex flex-column justify-content-between">
