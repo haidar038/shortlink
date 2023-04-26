@@ -1,51 +1,25 @@
-$color_1: #3a3a3a;
-$color_2: white;
-$color_3: royalblue;
-$font-family_1: "IBM Plex Sans";
-$background-color_1: #fdfdfd;
-$background-color_2: royalblue;
-$border-color_1: royalblue;
-
-* {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
-	font-family: $font-family_1;
+	font-family: "IBM Plex Sans";
 	font-display: swap;
-	&:before {
-		box-sizing: inherit;
-		font-family: $font-family_1;
-		font-display: swap;
-	}
-	&:after {
-		box-sizing: inherit;
-		font-family: $font-family_1;
-		font-display: swap;
-	}
 }
 html {
 	height: 100%;
 	box-sizing: border-box;
 }
 body {
-	background-color: $background-color_1;
-	color: $color_1;
+	background-color: #fdfdfd;
+	color: #3a3a3a;
 	min-height: 100%;
 	position: relative;
 }
-h1 {
-	font-weight: 700;
-}
-h2 {
-	font-weight: 700;
-}
-h3 {
-	font-weight: 700;
-}
-h4 {
-	font-weight: 700;
-}
-h5 {
-	font-weight: 700;
-}
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
 	font-weight: 700;
 }
@@ -63,14 +37,16 @@ h6 {
 	z-index: 1;
 }
 .text-bg-blue {
-	background-color: $background-color_2 !important;
-	color: $color_2 !important;
+	background-color: #4169e1 !important;
+	color: #ffffff !important;
 }
-.card.text-bg-blue {
-	border-color: $border-color_1 !important;
+.card {
+	&.text-bg-blue {
+		border-color: #4169e1 !important;
+	}
 }
 .text-blue {
-	color: $color_3;
+	color: #4169e1;
 }
 .features {
 	svg {
