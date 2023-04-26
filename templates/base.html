@@ -8,7 +8,7 @@
             content="
             Shorten your long URLs with our easy-to-use URL Shortener web app."
         />
-        <meta name="keywords" content="url, link, shorten, shorten url, url shortener, urls, links, website, sevice, social media, email">
+        <meta name="keywords" content="url, link, shorten, shorten url, url shortener, urls, links, website, sevice">
         <meta property="og:title" content="ShortLink: Shorten URLs with ShortLink" />
         <meta property="og:description" content="Shorten your long URLs with our easy-to-use URL Shortener web app." />
         <meta property="og:image" content="https://i.ibb.co/Mkv1Zb4/Short-Link.webp" />
@@ -71,6 +71,9 @@
             <script async type="text/javascript" src="{{ ASSET_URL }}"></script>
         {% endassets %}
         {% assets "scss" %}
+            <link rel="stylesheet" href="{{ ASSET_URL }}" />
+        {% endassets %}
+        {% assets "css" %}
             <link rel="stylesheet" href="{{ ASSET_URL }}" />
         {% endassets %}
     </head>
