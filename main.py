@@ -39,15 +39,15 @@ limiter = Limiter(
 )
 
 # Define SASS Bundle
-sass = Bundle('static/main.scss', filters='pyscss', output='static/style.css')
+sass = Bundle('static/main.scss', filter='pyscss', output='style.css')
 assets.register('sass', sass)
 
 # Define the CSS bundle
-css = Bundle('static/css/style.css', output='static/css/all.css')
+css = Bundle('static/css/main.css', output='style.css')
 assets.register('css', css)
 
 # Define the JS bundle
-js = Bundle('static/js/main.js', output='static/js/all.js')
+js = Bundle('static/js/main.js', output='all.js')
 assets.register('js', js)
 
 # Models
