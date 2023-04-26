@@ -42,14 +42,6 @@ limiter = Limiter(
 sass = Bundle('main.scss', filters='pyscss', output='style.css')
 assets.register('sass', sass)
 
-# Define the CSS bundle
-css = Bundle('css/style.css', output='style.css')
-assets.register('css', css)
-
-# Define the JS bundle
-js = Bundle('js/main.js', output='all.js')
-assets.register('js', js)
-
 # Models
 class ShortenedUrl(db.Model):
     id = db.Column(db.Integer, primary_key=True)
