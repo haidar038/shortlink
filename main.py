@@ -39,8 +39,8 @@ limiter = Limiter(
 )
 
 # Define SASS Bundle
-sass = Bundle('scss/main.scss', filters='pyscss', output='gen/style.css')
-assets.register('sass', sass)
+scss = Bundle('scss/main.scss', filters='pyscss', output='gen/style.css')
+assets.register('scss', scss)
 
 # Define the JS bundle
 js = Bundle('js/main.js', output='gen/all.js', filters='jsmin')
