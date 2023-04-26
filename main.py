@@ -28,15 +28,13 @@ compress = Compress()
 toastr = Toastr(app)
 db = SQLAlchemy()
 mail = Mail(app)
-db.init_app(app)
 migrate = Migrate(app, db)
+db.init_app(app)
+compress.init_app(app)
 limiter = Limiter(
     app,
     default_limits=["100 per day"]
 )
-compress.init_app(app, 
-                  level=6, 
-                  content_types=['text/html', 'text/css', 'text/xml', 'application/json'])
 
 # Models
 class ShortenedUrl(db.Model):
