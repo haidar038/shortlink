@@ -16,3 +16,4 @@ Flask-Compress==1.13
 pyScss==1.4.0
 jsmin==3.0.1
 cssmin==0.2.0
+Flask-Assets==2.0
