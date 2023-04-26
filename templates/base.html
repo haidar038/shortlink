@@ -67,85 +67,8 @@
         <!-- TODO Toastr -->
         {{ toastr.include_toastr_css() }} {{ toastr.message() }}
 
-        <style type="text/css">
-            *,
-            *:before,
-            *:after {
-                box-sizing: inherit;
-                font-family: "IBM Plex Sans";
-                font-display: swap;
-            }
-
-            html {
-                height: 100%;
-                box-sizing: border-box;
-            }
-
-            body {
-                background-color: #fdfdfd;
-                color: #3a3a3a;
-                min-height: 100%;
-                position: relative;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-weight: 700;
-            }
-
-            .input-group .btn {
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
-            .toast {
-                position: fixed;
-                top: 80px;
-                right: 20px;
-                width: 200px;
-                z-index: 1;
-            }
-
-            .text-bg-blue {
-                background-color: royalblue !important;
-                color: white !important;
-            }
-
-            .card.text-bg-blue {
-                border-color: royalblue !important;
-            }
-
-            .text-blue {
-                color: royalblue;
-            }
-
-            .features svg {
-                fill: #555 !important;
-                height: 50px;
-            }
-
-            .socials img {
-                transition: ease-in-out 0.2s;
-                filter: grayscale(1);
-            }
-
-            .socials img:hover {
-                filter: grayscale(0);
-            }
-        </style>
-
-        <link
-            rel="preload"
-            href="{{ url_for('static', filename='css/style.css' ) }}"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}" /></noscript>
-        
-        <script async src="{{ url_for('static', filename='js/copyToClipboard.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css' ) }}" />
+        <script async src="{{ url_for('static', filename='js/main.min.js') }}"></script>
     </head>
     <body class="vh-100 d-flex flex-column justify-content-between">
         <section>
@@ -228,7 +151,5 @@
             integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
             crossorigin="anonymous"
         ></script>
-        <script async src="{{ url_for('static', filename='js/tooltips.js') }}"></script>
-        <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
 </html>
