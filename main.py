@@ -39,7 +39,7 @@ limiter = Limiter(
 )
 
 # Define SASS Bundle
-sass = Bundle('main.scss', filters='pyscss', output='style.css')
+sass = Bundle('scss/main.scss', filters='pyscss', output='gen/packed.css')
 assets.register('sass', sass)
 
 # Models
