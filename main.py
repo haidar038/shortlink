@@ -43,7 +43,7 @@ sass = Bundle('main.scss', filters='pyscss', output='style.css')
 assets.register('sass', sass)
 
 # Define the CSS bundle
-css = Bundle('css/main.css', output='style.css')
+css = Bundle('css/style.css', output='style.css')
 assets.register('css', css)
 
 # Define the JS bundle
