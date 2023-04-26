@@ -39,7 +39,7 @@ limiter = Limiter(
 )
 
 # Define SASS Bundle
-scss = {Bundle('scss/main.scss', filters=['pyscss','cssmin'], output='gen/style.css')}
+scss = {Bundle('scss/main.scss', filters='pyscss', output='gen/style.css')}
 assets.register('scss', scss)
 
 css = Bundle('css/style.css', filters='cssmin', output='gen/all.css')
