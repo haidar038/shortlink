@@ -11,6 +11,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField
 from wtforms.validators import DataRequired, url, Email
 from flask_compress import Compress
+from flask_assets import Environment, Bundle
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///app.db"
@@ -25,6 +26,7 @@ app.config['MAIL_USERNAME'] = 'etercode30@gmail.com'
 app.config['MAIL_PASSWORD'] = 'p8fdMwC39bac2POy'
 
 compress = Compress()
+assets = Environment(app)
 toastr = Toastr(app)
 db = SQLAlchemy()
 mail = Mail(app)
@@ -35,6 +37,14 @@ limiter = Limiter(
     app,
     default_limits=["100 per day"]
 )
+
+# Define SASS Bundle
+sass = Bundle('scss/main.scss', filters='pyscss', output='gen/style.css')
+assets.register('sass', sass)
+
+# Define the JS bundle
+js = Bundle('js/main.js', output='gen/all.js', filters='jsmin')
+assets.register('js', js)
 
 # Models
 class ShortenedUrl(db.Model):
