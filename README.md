@@ -2,7 +2,7 @@
 
 ![ShortLink](https://user-images.githubusercontent.com/62201903/232665775-c9aa403d-3aee-4fb9-9ed2-13f014197853.gif)
   
-ShortLink adalah sebuah aplikasi URL Shortener yang dibangun menggunakan Flask dan SQLite, dengan antarmuka pengguna yang dibangun menggunakan Bootstrap. Aplikasi ini dapat memendekkan URL panjang dan melacak jumlah klik atau pengunjung pada setiap tautan yang telah dibuat.
+ShortLink adalah sebuah website URL Shortener yang dibangun menggunakan Flask dan SQLite, dengan antarmuka pengguna yang dibangun menggunakan Bootstrap. Website ini dapat memendekkan URL panjang dan melacak jumlah klik atau pengunjung pada setiap tautan yang telah dibuat.
 
 ## Teknologi yang Digunakan
 - Python 3.11.2
