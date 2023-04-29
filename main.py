@@ -85,7 +85,7 @@ def sanitize_url(url):
         return None
     else:
         return parsed_url.geturl()
-
+    
 @app.route('/', methods=['POST', 'GET'])
 @limiter.limit("10 per minute")
 def shorten():
@@ -112,6 +112,9 @@ def shorten():
 
     return render_template('index.html', form=form)
 
+@app.route('/googledb6605d07a2ef7ce.html')
+def google_verification():
+    return render_template('googledb6605d07a2ef7ce.html')
 
 @app.route('/<short_url>')
 def redirect_to_original_url(short_url):
