@@ -8,6 +8,7 @@
             content="
             Shorten your long URLs with our easy-to-use URL Shortener web app."
         />
+        <meta name="google-site-verification" content="tlEU3UFKEZi13dIpCBC4u0QVkxMg8kIZGScfm4SL9_s" />
         <meta name="keywords" content="url, link, shorten, shorten url, url shortener, urls, links, website, sevice">
         <meta property="og:title" content="ShortLink: Shorten URLs with ShortLink" />
         <meta property="og:description" content="Shorten your long URLs with our easy-to-use URL Shortener web app." />
@@ -76,6 +77,18 @@
         {% assets "css" %}
             <link rel="stylesheet" href="{{ ASSET_URL }}" />
         {% endassets %}
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "UA-373161896-1");
+        </script>
     </head>
     <body class="vh-100 d-flex flex-column justify-content-between">
         <section>
@@ -159,5 +172,6 @@
             integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
             crossorigin="anonymous"
         ></script>
+  </script>
     </body>
 </html>
