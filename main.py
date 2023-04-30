@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, abort, flash, url_for
+from flask import Flask, render_template, redirect, request, abort, flash, url_for, send_from_directory
 import string, random, secrets
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -72,7 +72,6 @@ class ContactForm(FlaskForm):
 with app.app_context():
     db.create_all()
 
-
 @app.route('/')
 def index():
     form = UrlForm()
@@ -116,6 +115,15 @@ def shorten():
 def google_verification():
     return render_template('googledb6605d07a2ef7ce.html')
 
+
+@app.route('/robots.xml')
+def robots():
+    return render_template('robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
+
 @app.route('/<short_url>')
 def redirect_to_original_url(short_url):
     # Retrieve the original URL from the database
@@ -146,10 +154,6 @@ def shorten_success(short_url):
     else:
         # If the shortened URL is not found, return a 404 error
         return abort(404)
-
-@app.route('/sitemap.xml')
-def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
 
 @app.route('/about')
 def about():
