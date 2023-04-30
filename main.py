@@ -116,10 +116,6 @@ def shorten():
 def google_verification():
     return render_template('googledb6605d07a2ef7ce.html')
 
-@app.route('/.well-known/pki-validation/B4A2B4B8494512CF82C2CF71D91C7285.txt')
-def zero_ssl():
-    return render_template('B4A2B4B8494512CF82C2CF71D91C7285.txt')
-
 @app.route('/<short_url>')
 def redirect_to_original_url(short_url):
     # Retrieve the original URL from the database
@@ -143,6 +139,9 @@ def shorten_success(short_url):
     if shortened_url:
         original_url = shortened_url.original_url
         # Render the "shorten_success" page with the short URL and original URL
+        
+        host_url = urlparse(request.host_url).netloc
+        
         return render_template('shorten.html', short_url=request.host_url + short_url, original_url=original_url, clicked=clicked, page="shorten")
     else:
         # If the shortened URL is not found, return a 404 error
