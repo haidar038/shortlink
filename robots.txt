@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /templates/
-Disallow: /instance/
-Disallow: /static/
-Sitemap: /sitemap.xml
