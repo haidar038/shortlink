@@ -147,6 +147,10 @@ def shorten_success(short_url):
         # If the shortened URL is not found, return a 404 error
         return abort(404)
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
+
 @app.route('/about')
 def about():
     return render_template('about.html', page="about")
