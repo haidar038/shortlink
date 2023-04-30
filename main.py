@@ -12,6 +12,7 @@ from wtforms import StringField, TextAreaField
 from wtforms.validators import DataRequired, url, Email
 from flask_compress import Compress
 from flask_assets import Environment, Bundle
+from flask_caching import Caching
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///app.db"
@@ -37,6 +38,7 @@ limiter = Limiter(
     app,
     default_limits=["100 per day"]
 )
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 # Define SASS Bundle
 scss = Bundle('scss/main.scss', filters='pyscss', output='gen/style.css')
@@ -73,6 +75,7 @@ with app.app_context():
     db.create_all()
 
 @app.route('/')
+@cache.cached(timeout=300)
 def index():
     form = UrlForm()
     urls = ShortenedUrl.query.all()
@@ -87,6 +90,7 @@ def sanitize_url(url):
     
 @app.route('/', methods=['POST', 'GET'])
 @limiter.limit("10 per minute")
+@cache.cached(timeout=300)
 def shorten():
     form = UrlForm()
     if form.validate_on_submit():
@@ -140,6 +144,7 @@ def redirect_to_original_url(short_url):
         return abort(404)
 
 @app.route('/shorten-success/<short_url>')
+@cache.cached(timeout=300)
 def shorten_success(short_url):
     # Retrieve the original URL from the database
     shortened_url = ShortenedUrl.query.filter_by(short_url=short_url).first()
