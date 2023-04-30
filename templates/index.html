@@ -8,8 +8,8 @@ ShortLink: Shorten your URLs with us!
 
 <div class="container mt-5 mb-5">
     <div class="row mb-5 flex-wrap">
+        <h1 class="text-center">Shorten Your URL Here!</h1>
         <div class="col-md-6 mx-auto">
-            <h1 class="text-center">Shorten Your URL Here!</h1>
             <p class="text-center mb-4">Shorten your links, lengthen your reach with ShortLink</p>
             <form method="POST" action="{{ url_for('shorten') }}">
                 {{ form.hidden_tag() }}{{ form.csrf_token }}
