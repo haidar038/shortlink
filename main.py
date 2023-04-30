@@ -12,7 +12,7 @@ from wtforms import StringField, TextAreaField
 from wtforms.validators import DataRequired, url, Email
 from flask_compress import Compress
 from flask_assets import Environment, Bundle
-from flask_caching import Caching
+from flask_caching import Cache
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///app.db"
