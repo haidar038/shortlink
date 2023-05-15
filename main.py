@@ -153,7 +153,7 @@ def shorten_success(short_url):
         original_url = shortened_url.original_url
         # Render the "shorten_success" page with the short URL and original URL
         
-        host_url = urlparse(request.host_url).netloc
+        # host_url = urlparse(request.host_url).netloc
         
         return render_template('shorten.html', short_url= host_url + '/' + short_url, original_url=original_url, clicked=clicked, page="shorten")
     else:
