@@ -152,7 +152,7 @@ def about():
 
 @app.route('/contact', methods=['POST', 'GET'])
 def contact():
-    return render_template('contact.html', form=form, page="contact")
+    return render_template('contact.html', page="contact")
 
 @app.route('/privacy')
 def privacy():
