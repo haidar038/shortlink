@@ -92,6 +92,7 @@ def sanitize_url(url):
 @limiter.limit("10 per minute")
 @cache.cached(timeout=300)
 def shorten():
+    def shorten():
     form = UrlForm()
     if form.validate_on_submit():
         original_url = form.url.data
@@ -104,11 +105,17 @@ def shorten():
         short_url = ''.join(random.choices(
             string.ascii_letters + string.digits, k=5))
 
-        # Create a new ShortenedUrl object and add it to the database
-        shortened_url = ShortenedUrl(
-            original_url=original_url, short_url=short_url, created_at=datetime.utcnow())
-        db.session.add(shortened_url)
-        db.session.commit()
+        # Check if the ShortenedUrl object already exists in the database
+        shortened_url_object = ShortenedUrl.query.filter_by(original_url=original_url).first()
+        if shortened_url_object is None:
+            # The ShortenedUrl object does not exist in the database, so add it
+            shortened_url_object = ShortenedUrl(
+                original_url=original_url, short_url=short_url, created_at=datetime.utcnow())
+            db.session.add(shortened_url_object)
+            db.session.commit()
+        else:
+            # The ShortenedUrl object already exists in the database, so do nothing
+            pass
 
         # Render the shortened URL page with the new short URL
         return redirect(url_for('shorten_success', short_url=short_url))
