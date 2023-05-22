@@ -161,7 +161,7 @@ def shorten_success(short_url):
         
         # host_url = urlparse(request.host_url).netloc
         
-        return render_template('shorten.html', short_url= host_url + '/' + short_url, original_url=original_url, clicked=clicked, page="shorten")
+        return render_template('shorten.html', short_url= request.host_url + short_url, original_url=original_url, clicked=clicked, page="shorten")
     else:
         # If the shortened URL is not found, return a 404 error
         return abort(404)
