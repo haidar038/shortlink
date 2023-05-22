@@ -92,7 +92,6 @@ def sanitize_url(url):
 @limiter.limit("10 per minute")
 @cache.cached(timeout=300)
 def shorten():
-    def shorten():
     form = UrlForm()
     if form.validate_on_submit():
         original_url = form.url.data
