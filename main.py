@@ -75,7 +75,6 @@ with app.app_context():
     db.create_all()
 
 @app.route('/')
-@cache.cached(timeout=300)
 def index():
     form = UrlForm()
     urls = ShortenedUrl.query.all()
@@ -90,7 +89,6 @@ def sanitize_url(url):
     
 @app.route('/', methods=['POST', 'GET'])
 @limiter.limit("10 per minute")
-@cache.cached(timeout=300)
 def shorten():
     form = UrlForm()
     if form.validate_on_submit():
@@ -121,22 +119,8 @@ def shorten():
 
     return render_template('index.html', form=form)
 
-@app.route('/googledb6605d07a2ef7ce.html')
-def google_verification():
-    return render_template('googledb6605d07a2ef7ce.html')
-
-
-@app.route('/robots.xml')
-def robots():
-    return render_template('robots.txt')
-
-@app.route('/sitemap.xml')
-def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
-
 @app.route('/<short_url>')
 def redirect_to_original_url(short_url):
-    # Retrieve the original URL from the database
     shortened_url = ShortenedUrl.query.filter_by(short_url=short_url).first()
     if shortened_url:
         # Increment the clicks count of the ShortenedUrl object
@@ -150,7 +134,6 @@ def redirect_to_original_url(short_url):
         return abort(404)
 
 @app.route('/shorten-success/<short_url>')
-@cache.cached(timeout=300)
 def shorten_success(short_url):
     # Retrieve the original URL from the database
     shortened_url = ShortenedUrl.query.filter_by(short_url=short_url).first()
@@ -158,10 +141,7 @@ def shorten_success(short_url):
     if shortened_url:
         original_url = shortened_url.original_url
         # Render the "shorten_success" page with the short URL and original URL
-        
-        # host_url = urlparse(request.host_url).netloc
-        
-        return render_template('shorten.html', short_url= request.host_url + short_url, original_url=original_url, clicked=clicked, page="shorten")
+        return render_template('shorten.html', short_url=request.host_url + short_url, original_url=original_url, clicked=clicked, page="shorten")
     else:
         # If the shortened URL is not found, return a 404 error
         return abort(404)
@@ -172,20 +152,6 @@ def about():
 
 @app.route('/contact', methods=['POST', 'GET'])
 def contact():
-    form = ContactForm()
-    if form.validate_on_submit():
-        
-        name = form.name.data
-        email = form.email.data
-        message = form.message.data
-
-        # Send email to support email address
-        msg = Message('Contact Form Submission', sender=email, recipients=['etercode30@gmail.com'])
-        msg.body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
-        mail.send(msg)
-
-        flash('Thank you for contacting us! We will get back to you shortly.')
-        return redirect(url_for('contact'))
     return render_template('contact.html', form=form, page="contact")
 
 @app.route('/privacy')
@@ -198,5 +164,4 @@ def tou():
 
 if __name__ == "__main__":
     # app.run(debug=True, host='0.0.0.0', port=int(os.environ.get("PORT", 8080)))
-    app.run(port=5000)
-    # app.run(debug=True)
+    app.run(debug=True)
