@@ -77,9 +77,7 @@
         <!-- TODO Toastr -->
         {{ toastr.include_toastr_css() }} {{ toastr.message() }}
         
-        {% assets "css" %}
-            <link rel="stylesheet" href="{{ ASSET_URL }}" />
-        {% endassets %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
         
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-373161896-1"></script>
@@ -190,9 +188,6 @@
             integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
             crossorigin="anonymous"
         ></script>
-        {% assets "js" %}
-            <script defer type="text/javascript" src="{{ ASSET_URL }}"></script>
-        {% endassets %}
-  </script>
+        <script defer type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
 </html>
