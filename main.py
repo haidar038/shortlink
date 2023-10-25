@@ -27,7 +27,6 @@ app.config['MAIL_USERNAME'] = 'etercode30@gmail.com'
 app.config['MAIL_PASSWORD'] = 'p8fdMwC39bac2POy'
 
 compress = Compress()
-assets = Environment(app)
 toastr = Toastr(app)
 db = SQLAlchemy()
 mail = Mail(app)
@@ -38,18 +37,6 @@ limiter = Limiter(
     app,
     default_limits=["100 per day"]
 )
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
-
-# Define SASS Bundle
-scss = Bundle('scss/main.scss', filters='pyscss', output='gen/style.css')
-assets.register('scss', scss)
-
-css = Bundle('css/style.css', filters='cssmin', output='gen/all.css')
-assets.register('css', css)
-
-# Define the JS bundle
-js = Bundle('js/main.js', filters='jsmin', output='gen/all.js')
-assets.register('js', js)
 
 # Models
 class ShortenedUrl(db.Model):
