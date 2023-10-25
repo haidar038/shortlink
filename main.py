@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request, abort, flash, url_for, send_from_directory
 import string, random, secrets
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timedelta
 from flask_migrate import Migrate
 from flask_limiter import Limiter
 from urllib.parse import urlparse
@@ -132,6 +132,17 @@ def shorten_success(short_url):
     else:
         # If the shortened URL is not found, return a 404 error
         return abort(404)
+
+def delete_old_urls():
+    # Get all shortened URLs that were created more than 7 days ago
+    old_urls = ShortenedUrl.query.filter(ShortenedUrl.created_at < datetime.utcnow() - timedelta(days=7)).all()
+
+    # Delete the old shortened URLs
+    for url in old_urls:
+        db.session.delete(url)
+
+    # Commit the changes to the database
+    db.session.commit()
 
 @app.route('/about')
 def about():
